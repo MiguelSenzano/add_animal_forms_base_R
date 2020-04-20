@@ -2,7 +2,7 @@
 # Plot animals
 #
 # by Luis Miguel Senzano Castro
-# São Paulo State University - UNESP,
+# SÃ£o Paulo State University - UNESP,
 # Rio Claro, SP, Brazil.
 # e-mail: luismiguelsenzanocastro@gmail.com
 # Last modification: 04/19/2020
@@ -40,7 +40,7 @@ at = seq(0,24,1)
 lab = c("00:00","","","03:00","","","06:00","","","09:00","","","12:00","","","15:00",
         "","","18:00","","","21:00","","","23:59")
 
-plot(data$hour, data$Tb, xlab = "Hour", ylab= "Body Temperature (°C)",
+plot(data$hour, data$Tb, xlab = "Hour", ylab= "Body Temperature (Â°C)",
      xlim = c(0,24), ylim = c(20, 35), pch=19, col="dodgerblue",cex = 1.1,
      axes = FALSE, xpd=TRUE,)
 axis(side=1, at= at, labels=lab, las=2, cex.axis=0.9,lwd=0.2)
@@ -65,7 +65,7 @@ plot_phylopic_base(toad,  x=0.5, y=0.5, ysize=0.4, color= "black", alpha = 0.7) 
 # get axis coordinates to add image
 
 xrang <- 24 # x-axis range = 24 (i.e. 0-24)
-yrang <- 15 # y-axis range = 25 (i.e. 20-35)
+yrang <- 15 # y-axis range = 15 (i.e. 20-35)
 ymin <- 20 # lower y-axis value
 ycorrec <- ymin/yrang
 
@@ -83,11 +83,11 @@ tb.vect <- as.numeric(tb.vect)
 
 posx <- hour.vect  # x-axis position (it goes from  0 (left) to 1 (right))
 posy <- tb.vect    # y-axis position (it goes from  0 (buttom) to 1 (top))
-size <- rep(0.05, 15) # due to N=15 individuals
+size <- rep(0.05, 15) # replicate the image size 15 times (one to each individual point, N=15)
 
 # plot 
 
-plot(data$hour, data$Tb, xlab = "Hour", ylab= "Body Temperature (°C)",
+plot(data$hour, data$Tb, xlab = "Hour", ylab= "Body Temperature (Â°C)",
      xlim = c(0,24), ylim = c(20, 35), pch=19, col=NA,
      axes = FALSE, xpd=TRUE,)
 axis(side=1, at= at, labels=lab, las=2, cex.axis=0.9,lwd=0.2)
@@ -97,8 +97,8 @@ text(4,33.9,bquote(' Animal Tb '), cex = 0.8, col="black")
 add_phylopic_base(toad, x=0.07, y=0.89, ysize=0.05, color= "dodgerblue", alpha = 1)
 
 add_phylopic_base(toad, # image
-                  x=posx, # x-axis vector position must be between 0 (left limit)-1 (right limit) 
-                  y=posy, # y-axis vector position must be between 0 (buttom limit)-1 (top limit)
+                  x=posx, # x-axis vector position must be between 0 (left limit) and 1 (right limit) 
+                  y=posy, # y-axis vector position must be between 0 (buttom limit) and 1 (top limit)
                   ysize=size, 
                   color= "dodgerblue", alpha = 0.9)
 
